@@ -7,10 +7,13 @@ public class Boss : MonoBehaviour {
 
     private Transform target;
     private int wavepointIndex = 0;
+    private bool heard_noise;
+    private Transform noise_position;
 
 	// Use this for initialization
 	void Start () {
         target = Waypoints.points[0];
+        heard_noise = false;
 	}
 	
 	// Update is called once per frame
@@ -19,14 +22,26 @@ public class Boss : MonoBehaviour {
         Vector3 dir = target.position - transform.position;
         transform.Translate(dir.normalized * moveSpeed * Time.deltaTime, Space.World);
 
-        if (Vector3.Distance(transform.position, target.position) <= 0.2f){
-            GetNextWaipoint();
+        if (Vector3.Distance(transform.position, target.position) <= 0.2f && !heard_noise){
+            GetNextWaipoint(false);
         }
-	}
+        if (heard_noise)
+        {
+            GetNextWaipoint(true);
+        }
+    }
 
-    void GetNextWaipoint()
+    void GetNextWaipoint(bool is_it_noisy)
     {
-        target = Waypoints.points[randWaypoints()];
+        if (!is_it_noisy)
+        {
+            target = Waypoints.points[randWaypoints()];
+        }
+        else if(is_it_noisy)
+        {
+            target = noise_position;
+            heard_noise = false;
+        }
     }
 
     int randWaypoints()
@@ -39,5 +54,11 @@ public class Boss : MonoBehaviour {
         {
             collision_with.gameObject.SendMessage("ApplyDamage", 1);
         }
+    }
+
+    void teleportToNoiseLocation(Transform position)
+    {
+        heard_noise = true;
+        noise_position = position;
     }
 }

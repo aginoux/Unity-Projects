@@ -8,9 +8,10 @@ public class Noise : MonoBehaviour {
 	{
 		if (collision_with.gameObject.tag == "Player") 
 		{
-			//print (transform.parent.name);
-			//print (transform.parent.position);
-			gameObject.SendMessage ("teleportToNoiseLocation", transform.parent.position);
+            //print (transform.parent.name);
+            //print (transform.parent.position);
+            GameObject find_boss = GameObject.FindGameObjectWithTag("boss");
+            find_boss.SendMessage ("teleportToNoiseLocation", transform.parent);
 		}
 	}
 }
