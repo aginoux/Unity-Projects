@@ -5,8 +5,7 @@ public class Door1 : MonoBehaviour {
 
     GameObject key1;
 
-    [SerializeField]
-    private bool key_taken;
+    [SerializeField] private bool key_taken;
 
     // Use this for initialization
     void Start ()

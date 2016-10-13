@@ -33,7 +33,7 @@ public class Boss : MonoBehaviour {
     {
         return Random.Range(0, Waypoints.points.Length);
     }
-    void OnCollisionEnter2D(Collision2D collision_with)
+	void OnTriggerEnter2D(Collider2D collision_with)
     {
         if (collision_with.gameObject.tag == "Player")
         {
