@@ -17,8 +17,13 @@ public class coeur : MonoBehaviour {
 	{
 		if (collision_with.gameObject.tag == "Player")
 		{
-			collision_with.gameObject.SendMessage ("addLife", 1);
-			//Destroy (gameObject);
+			int player_health;
+			player_health = collision_with.GetComponent<Health> ().current_health;
+			if (player_health < 3)
+			{
+				collision_with.gameObject.SendMessage ("addLife", 1);
+				Destroy (gameObject);
+			}
 		}
 	}
 }

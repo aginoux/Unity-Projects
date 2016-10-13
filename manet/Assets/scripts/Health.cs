@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour {
 
-	int current_health = 3;
+	public int current_health = 3;
 	GameObject find_health_ui;
 	public Sprite no_heart;
 	public Sprite one_heart;
