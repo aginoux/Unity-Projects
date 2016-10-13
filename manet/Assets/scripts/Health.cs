@@ -33,7 +33,7 @@ public class Health : MonoBehaviour {
 
 	void addLife(int life)
 	{
-		if (current_health > 0) 
+		if (current_health > 0 && current_health < 3) 
 		{
 			current_health += life;
 		}
