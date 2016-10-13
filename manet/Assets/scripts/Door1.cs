@@ -12,16 +12,18 @@ public class Door1 : MonoBehaviour {
     void Start ()
     {
         key_taken = false;
-        key1 = GameObject.FindGameObjectWithTag("key1");
     }
+
+	void GetKey(bool is_key_taken)
+	{
+		key_taken = is_key_taken;
+	}
 	
     void OnCollisionEnter2D(Collision2D collision_with)
     {
-        print("Door1 " + collision_with.gameObject.tag);
-        key_taken = key1.GetComponent<Key1>().taken;
-        if (key_taken)
+        //print("Door1 " + collision_with.gameObject.tag);
+		if (key_taken && collision_with.gameObject.tag == "Player")
         {
-            Destroy(key1);
             Destroy(gameObject);
         }
     }

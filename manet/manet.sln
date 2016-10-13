@@ -1,7 +1,7 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "manet.CSharp", "manet.CSharp.csproj", "{8BA0E682-4F8B-6C68-7E8F-D1D06554B899}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{F9513390-6D1E-BA86-B61F-C05BE6AECD9C}") = "manet", "Assembly-CSharp.csproj", "{8F2E2A2F-122D-630E-78CE-CE00A4932D7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,12 +9,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8BA0E682-4F8B-6C68-7E8F-D1D06554B899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8BA0E682-4F8B-6C68-7E8F-D1D06554B899}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8BA0E682-4F8B-6C68-7E8F-D1D06554B899}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8BA0E682-4F8B-6C68-7E8F-D1D06554B899}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F2E2A2F-122D-630E-78CE-CE00A4932D7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F2E2A2F-122D-630E-78CE-CE00A4932D7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F2E2A2F-122D-630E-78CE-CE00A4932D7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F2E2A2F-122D-630E-78CE-CE00A4932D7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
