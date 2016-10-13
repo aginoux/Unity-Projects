@@ -1,0 +1,344 @@
+fileFormatVersion: 2
+guid: ab604b75cad6f0c40a0f4bd076315d6a
+timeCreated: 1476102880
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Atlas02_MJ01_0
+    21300002: Atlas02_MJ01_1
+    21300004: Atlas02_MJ01_2
+    21300006: Atlas02_MJ01_3
+    21300008: Atlas02_MJ01_4
+    21300010: Atlas02_MJ01_5
+    21300012: Atlas02_MJ01_6
+    21300014: Atlas02_MJ01_7
+    21300016: Atlas02_MJ01_8
+    21300018: Atlas02_MJ01_9
+    21300020: Atlas02_MJ01_10
+    21300022: Atlas02_MJ01_11
+    21300024: Atlas02_MJ01_12
+    21300026: Atlas02_MJ01_13
+    21300028: Atlas02_MJ01_14
+    21300030: Atlas02_MJ01_15
+    21300032: Atlas02_MJ01_16
+    21300034: Atlas02_MJ01_17
+    21300036: Atlas02_MJ01_18
+    21300038: Atlas02_MJ01_19
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Standalone
+    maxTextureSize: 4096
+    textureFormat: -1
+    compressionQuality: 50
+    allowsAlphaSplitting: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Atlas02_MJ01_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 839
+        width: 142
+        height: 239
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas02_MJ01_1
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 995
+        width: 135
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas02_MJ01_2
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 995
+        width: 135
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas02_MJ01_3
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 994
+        width: 136
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas02_MJ01_4
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 909
+        width: 138
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas02_MJ01_5
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 909
+        width: 133
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas02_MJ01_6
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 909
+        width: 133
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas02_MJ01_7
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 711
+        width: 85
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas02_MJ01_8
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 591
+        width: 85
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas02_MJ01_9
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 591
+        width: 85
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas02_MJ01_10
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 480
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas02_MJ01_11
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 13
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas02_MJ01_12
+      rect:
+        serializedVersion: 2
+        x: 1668
+        y: 0
+        width: 252
+        height: 1078
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas02_MJ01_13
+      rect:
+        serializedVersion: 2
+        x: 1346
+        y: 621
+        width: 179
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas02_MJ01_14
+      rect:
+        serializedVersion: 2
+        x: 1253
+        y: 82
+        width: 303
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas02_MJ01_15
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 85
+        width: 467
+        height: 309
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas02_MJ01_16
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 892
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas02_MJ01_17
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 894
+        width: 128
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas02_MJ01_18
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 881
+        width: 158
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas02_MJ01_19
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 1001
+        width: 143
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
