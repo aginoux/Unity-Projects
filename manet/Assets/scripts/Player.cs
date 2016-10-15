@@ -261,6 +261,7 @@ public class Player : MonoBehaviour {
 	public bool in_locker;
 	public bool can_move;
 
+
     //Direction of the player
     [SerializeField]
     private bool right;
@@ -437,12 +438,12 @@ public class Player : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision_with)
     {
-        print("Player " + collision_with.gameObject.tag);
+        //print("Player " + collision_with.gameObject.tag);
     }
 
     void OnTriggerEnter2D(Collider2D collision_with)
     {
-        print("Player " + collision_with.gameObject.tag);
+        //print("Player " + collision_with.gameObject.tag);
     }
 
     //END VERSION 1.0

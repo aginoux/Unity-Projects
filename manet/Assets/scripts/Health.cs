@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour {
 
+	public float invicibleXseconds = 2;
 	public int current_health = 3;
 	GameObject find_health_ui;
 	public Sprite no_heart;
@@ -59,5 +60,10 @@ public class Health : MonoBehaviour {
 		{
 			find_health_ui.GetComponent<Image> ().sprite = no_heart;
 		}
+	}
+
+	IEnumerator Invicible()
+	{
+		yield return new WaitForSeconds(invicibleXseconds);
 	}
 }
