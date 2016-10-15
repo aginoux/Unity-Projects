@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+using UnityEditor;
 
 public class Player : MonoBehaviour {
 
@@ -254,6 +256,10 @@ public class Player : MonoBehaviour {
     private float moveSpeed;
     public float walkSpeed;
     public float runSpeed;
+	public string tag_locker;
+	public float radius_circle_detection =2.5f;
+	public bool in_locker;
+	public bool can_move;
 
     //Direction of the player
     [SerializeField]
@@ -273,6 +279,8 @@ public class Player : MonoBehaviour {
         left = false;
         up = false;
         down = false;
+		in_locker = false;
+		can_move = true;
         mrb2D = GetComponent<Rigidbody2D>();
         transform.position = new Vector3(0, 0, 0);
     }
@@ -291,44 +299,86 @@ public class Player : MonoBehaviour {
             //walking sped
             moveSpeed = walkSpeed;
         }
+		if (can_move) 
+		{
+			//Check for the direction, when a direction is chosen, it is set to true, all the others directions are set to false 
+			if (Input.GetKey(KeyCode.LeftArrow))
+			{
+				transform.position += Vector3.left * moveSpeed * Time.deltaTime;
+				right = false;
+				left = true;
+				up = false;
+				down = false;
+			}
+			else if (Input.GetKey(KeyCode.RightArrow))
+			{
+				transform.position += Vector3.right * moveSpeed * Time.deltaTime;
+				right = true;
+				left = false;
+				up = false;
+				down = false;
+			}
+			else if (Input.GetKey(KeyCode.UpArrow))
+			{
+				transform.position += Vector3.up * moveSpeed * Time.deltaTime;
+				right = false;
+				left = false;
+				up = true;
+				down = false;
+			}
+			else if (Input.GetKey(KeyCode.DownArrow))
+			{
+				transform.position += Vector3.down * moveSpeed * Time.deltaTime;
+				right = false;
+				left = false;
+				up = false;
+				down = true;
+			}
 
-        //Check for the direction, when a direction is chosen, it is set to true, all the others directions are set to false 
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.position += Vector3.left * moveSpeed * Time.deltaTime;
-            right = false;
-            left = true;
-            up = false;
-            down = false;
-        }
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.position += Vector3.right * moveSpeed * Time.deltaTime;
-            right = true;
-            left = false;
-            up = false;
-            down = false;
-        }
-        else if (Input.GetKey(KeyCode.UpArrow))
-        {
-            transform.position += Vector3.up * moveSpeed * Time.deltaTime;
-            right = false;
-            left = false;
-            up = true;
-            down = false;
-        }
-        else if (Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.position += Vector3.down * moveSpeed * Time.deltaTime;
-            right = false;
-            left = false;
-            up = false;
-            down = true;
-        }
-        
-        //Call the flip fonction, which will flip the player according to his direction
-        Flip();
+			//Call the flip fonction, which will flip the player according to his direction
+			Flip();
+		}
+
+		//check if close to a hideout.
+		if(Input.GetKeyDown(KeyCode.E))
+		{
+			if (!in_locker) 
+			{
+				Collider2D[] detected_it = Physics2D.OverlapCircleAll (transform.position, radius_circle_detection);
+				int i = 0;
+				while (i < detected_it.Length) 
+				{
+					if (detected_it [i].tag == tag_locker) 
+					{
+						EnterLocker ();
+						in_locker = true;
+						can_move = false;
+						return;
+					}
+					i++;
+				}
+			} 
+			else
+			{
+				ExitLocker ();
+				can_move = true;
+				in_locker = false;
+				print (in_locker);
+			}
+		}
     }
+		
+	private void EnterLocker()
+	{
+		GetComponent<SpriteRenderer> ().enabled = false;
+		GetComponent<BoxCollider2D>().enabled = false;
+	}
+
+	private void ExitLocker()
+	{
+		GetComponent<SpriteRenderer> ().enabled = true;
+		GetComponent<BoxCollider2D>().enabled = true;
+	}
 
     //Function to flip the player's image according to the direction chosen
     private void Flip()
