@@ -61,9 +61,5 @@ public class Health : MonoBehaviour {
 			find_health_ui.GetComponent<Image> ().sprite = no_heart;
 		}
 	}
-
-	IEnumerator Invicible()
-	{
-		yield return new WaitForSeconds(invicibleXseconds);
-	}
+		
 }

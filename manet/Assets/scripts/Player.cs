@@ -283,7 +283,7 @@ public class Player : MonoBehaviour {
 		in_locker = false;
 		can_move = true;
         mrb2D = GetComponent<Rigidbody2D>();
-        transform.position = new Vector3(0, 0, 0);
+        //transform.position = new Vector3(0, 0, 0);
     }
 
     // Update is called once per frame

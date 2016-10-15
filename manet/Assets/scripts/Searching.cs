@@ -13,9 +13,11 @@ public class Searching : MonoBehaviour {
 	private Vector3 dir = new Vector3 ();
 	public bool is_chasing = false;
 	public GameObject player;
+	public Vector3 last_target;
 
 	// Use this for initialization
 	void Start () {
+		last_target = transform.position;
         target = Waypoints.points[0];
         heard_noise = false;
 	}
@@ -38,6 +40,7 @@ public class Searching : MonoBehaviour {
 
     void GetNextWaypoint(bool is_it_noisy)
     {
+		last_target = target.position;
         if (!is_it_noisy)
         {
             target = Waypoints.points[randWaypoints()];
@@ -47,6 +50,8 @@ public class Searching : MonoBehaviour {
             target = noise_position;
             heard_noise = false;
         }
+
+		transform.rotation = Quaternion.FromToRotation (last_target, target.position);
     }
 
     int randWaypoints()

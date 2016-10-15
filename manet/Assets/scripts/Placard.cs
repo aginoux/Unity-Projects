@@ -20,7 +20,7 @@ public class Placard : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	/*void Update () {
 
         if (Input.GetKey(KeyCode.E))
         {
@@ -57,7 +57,29 @@ public class Placard : MonoBehaviour {
         {
             player.GetComponent<Player>().enabled = false;
         }
-    }
+    }*/
+
+	void Update () {
+
+		if (Input.GetKey(KeyCode.E) && enter_placard)
+		{
+			player.GetComponent<BoxCollider2D>().enabled = false;
+			is_in_placard = true;
+			player.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
+		}
+		else if (Input.GetKey(KeyCode.A) && is_in_placard)
+		{
+			enter_placard = false;
+			is_in_placard = false;
+			player.GetComponent<BoxCollider2D>().enabled = true;
+			player.GetComponent<Player>().enabled = true;
+		}
+
+		if (is_in_placard)
+		{
+			player.GetComponent<Player>().enabled = false;
+		}
+	}
 
     void OnCollisionEnter2D(Collision2D collision_with)
     {
