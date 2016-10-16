@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEditor;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
@@ -445,7 +446,10 @@ public class Player : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collision_with)
     {
-        //print("Player " + collision_with.gameObject.tag);
+		if (collision_with.gameObject.tag == "Finish")
+		{
+			SceneManager.LoadScene (0);
+		}
     }
 
     //END VERSION 1.0
