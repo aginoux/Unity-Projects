@@ -371,6 +371,8 @@ public class Player : MonoBehaviour {
 		
 	private void EnterLocker()
 	{
+		GameObject find_boss = GameObject.FindGameObjectWithTag ("boss");
+		find_boss.GetComponent<Searching>().is_chasing = false;
 		GetComponent<SpriteRenderer> ().enabled = false;
 		GetComponent<BoxCollider2D>().enabled = false;
 	}
