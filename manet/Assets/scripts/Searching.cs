@@ -85,7 +85,7 @@ public class Searching : MonoBehaviour {
 				target = collision_with.gameObject.transform;
 				is_chasing = true;
 			}*/
-
+			GetComponentInChildren<ChasingEffect> ().SendMessage ("PlayGhostSound");
 			target = collision_with.gameObject.transform;
 			is_chasing = true;
 		}

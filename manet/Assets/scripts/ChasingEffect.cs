@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class anim_chasing : MonoBehaviour {
+public class ChasingEffect : MonoBehaviour {
+
+	public AudioSource ghost_sound_effect;
 
 	// Use this for initialization
 	void Start () {
@@ -11,7 +13,8 @@ public class anim_chasing : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		bool chase = GetComponentInParent<Searching> ().is_chasing;
-		if (chase) {
+		if (chase) 
+		{
 			GetComponent<SpriteRenderer> ().enabled = true;
 		} 
 		else 
@@ -19,5 +22,13 @@ public class anim_chasing : MonoBehaviour {
 			GetComponent<SpriteRenderer> ().enabled = false;
 		}
 	
+	}
+
+	public void PlayGhostSound()
+	{
+		if (!ghost_sound_effect.isPlaying) 
+		{		
+			ghost_sound_effect.Play ();
+		}
 	}
 }
