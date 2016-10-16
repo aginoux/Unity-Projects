@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour {
 
@@ -59,6 +60,7 @@ public class Health : MonoBehaviour {
 		if (current_health == 0) 
 		{
 			find_health_ui.GetComponent<Image> ().sprite = no_heart;
+			SceneManager.LoadScene (0);
 		}
 	}
 		
