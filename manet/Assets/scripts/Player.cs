@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using UnityEditor;
+//using UnityEditor;
 using UnityEngine.SceneManagement;
 using System.Security.Cryptography.X509Certificates;
 
@@ -372,7 +372,7 @@ public class Player : MonoBehaviour {
 				ExitLocker ();
 				can_move = true;
 				in_locker = false;
-				print (in_locker);
+				//print (in_locker);
 			}
 		}
 			
