@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEditor;
 using UnityEngine.SceneManagement;
+using System.Security.Cryptography.X509Certificates;
 
 public class Player : MonoBehaviour {
 
@@ -264,19 +265,29 @@ public class Player : MonoBehaviour {
 
 
     //Direction of the player
-    [SerializeField]
-    private bool right;
-    [SerializeField]
-    private bool left;
-    [SerializeField]
-    private bool up;
-    [SerializeField]
-    private bool down;
+	private bool right;
+	private bool left;
+	private bool up;
+	private bool down;
+
+	public bool going_right;
+	public bool going_left;
+	public bool going_up;
+	public bool going_down;
+	public bool action_player;
+	public bool sprintting_player;
+	public bool test = false;
 
     // Use this for initialization
     void Start()
     {
         //Initialisation of the player's direction at the right
+		going_right = false;
+		going_left = false;
+		going_up = false;
+		going_down = false;
+		sprintting_player = false;
+		action_player = false;
         right = true;
         left = false;
         up = false;
@@ -291,7 +302,7 @@ public class Player : MonoBehaviour {
     void Update()
     {
         //Is the player walking or running? 
-        if (Input.GetKey(KeyCode.LeftShift))
+		if (Input.GetKey(KeyCode.LeftShift) || sprintting_player)
         {
             //running speed
             moveSpeed = runSpeed;
@@ -304,37 +315,37 @@ public class Player : MonoBehaviour {
 		if (can_move) 
 		{
 			//Check for the direction, when a direction is chosen, it is set to true, all the others directions are set to false 
-			if (Input.GetKey(KeyCode.LeftArrow))
-			{
+			if (Input.GetKey (KeyCode.LeftArrow) || going_left) {
 				transform.position += Vector3.left * moveSpeed * Time.deltaTime;
 				right = false;
 				left = true;
 				up = false;
 				down = false;
-			}
-			else if (Input.GetKey(KeyCode.RightArrow))
-			{
+			} else if (Input.GetKey (KeyCode.RightArrow) || going_right) {
 				transform.position += Vector3.right * moveSpeed * Time.deltaTime;
 				right = true;
 				left = false;
 				up = false;
 				down = false;
-			}
-			else if (Input.GetKey(KeyCode.UpArrow))
-			{
+			} else if (Input.GetKey (KeyCode.UpArrow) || going_up) {
 				transform.position += Vector3.up * moveSpeed * Time.deltaTime;
 				right = false;
 				left = false;
 				up = true;
 				down = false;
-			}
-			else if (Input.GetKey(KeyCode.DownArrow))
-			{
+			} else if (Input.GetKey (KeyCode.DownArrow) || going_down) {
 				transform.position += Vector3.down * moveSpeed * Time.deltaTime;
 				right = false;
 				left = false;
 				up = false;
 				down = true;
+			} 
+			else 
+			{
+				going_right = false;
+				going_left = false;
+				going_up = false;
+				going_down = false;
 			}
 
 			//Call the flip fonction, which will flip the player according to his direction
@@ -342,16 +353,14 @@ public class Player : MonoBehaviour {
 		}
 
 		//check if close to a hideout.
-		if(Input.GetKeyDown(KeyCode.E))
+		if(Input.GetKeyDown(KeyCode.E) || action_player)
 		{
-			if (!in_locker) 
-			{
+			test = !test;
+			if (!in_locker) {
 				Collider2D[] detected_it = Physics2D.OverlapCircleAll (transform.position, radius_circle_detection);
 				int i = 0;
-				while (i < detected_it.Length) 
-				{
-					if (detected_it [i].tag == tag_locker) 
-					{
+				while (i < detected_it.Length) {
+					if (detected_it [i].tag == tag_locker) {
 						EnterLocker ();
 						in_locker = true;
 						can_move = false;
@@ -359,15 +368,14 @@ public class Player : MonoBehaviour {
 					}
 					i++;
 				}
-			} 
-			else
-			{
+			} else {
 				ExitLocker ();
 				can_move = true;
 				in_locker = false;
 				print (in_locker);
 			}
 		}
+			
     }
 		
 	private void EnterLocker()
@@ -452,6 +460,56 @@ public class Player : MonoBehaviour {
 		}
     }
 
+	public void OnPressedButton(int button)
+	{
+		if (button == 0) {
+			going_left = true;
+			going_right = false;
+			going_up = false;
+			going_down = false;
+		} else if (button == 1) {
+			going_left = false;
+			going_right = true;
+			going_up = false;
+			going_down = false;
+		} else if (button == 2) {
+			going_left = false;
+			going_right = false;
+			going_up = false;
+			going_down = true;
+		} else if (button == 3) {
+			going_left = false;
+			going_right = false;
+			going_up = true;
+			going_down = false;
+		}
+	}
+
+	public void OnActionButtonPressed()
+	{
+		StartCoroutine (wait ());
+	}
+
+	public void OnSprinttingButtonPressed()
+	{
+		sprintting_player = true;
+	}
+
+	public void ReleasePressedButton()
+	{
+			going_left = false;
+			going_right = false;
+			going_up = false;
+			going_down = false;
+			sprintting_player = false;
+	}
+
+	IEnumerator wait()
+	{
+		action_player = true;
+		yield return new WaitForSeconds (0.02f);
+		action_player = false;
+	}
     //END VERSION 1.0
 
     
