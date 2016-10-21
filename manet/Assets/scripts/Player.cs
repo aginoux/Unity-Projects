@@ -15,6 +15,7 @@ public class Player : MonoBehaviour {
 	public float radius_circle_detection =2.5f;
 	public bool in_locker;
 	public bool can_move;
+	public float time_clik = 0.02f;
 
 
     //Direction of the player
@@ -263,7 +264,7 @@ public class Player : MonoBehaviour {
 	IEnumerator wait()
 	{
 		action_player = true;
-		yield return new WaitForSeconds (0.02f);
+		yield return new WaitForSeconds (time_clik);
 		action_player = false;
 	}
 }
