@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LifeThreeHearts : MonoBehaviour {
 
-	public float playerInvicibleXseconds = 5f;
+	public float playerInvincibleXseconds = 5f;
 	public int current_health = 3;
 	public Sprite no_heart;
 	public Sprite one_heart;
@@ -90,7 +90,7 @@ public class LifeThreeHearts : MonoBehaviour {
 	IEnumerator stopTouching()
 	{
 		invincible = true;
-		yield return new WaitForSeconds(playerInvicibleXseconds);
+		yield return new WaitForSeconds(playerInvincibleXseconds);
 		invincible = false;
 	}
 }

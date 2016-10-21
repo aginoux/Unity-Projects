@@ -7,7 +7,6 @@ public class Searching : MonoBehaviour {
 	public float waitXseconds = 3f;
 
     private Transform target;
-    private int wavepointIndex = 0;
     private bool heard_noise;
     private Transform noise_position;
 	private Vector3 dir = new Vector3 ();
@@ -85,7 +84,6 @@ public class Searching : MonoBehaviour {
 				target = collision_with.gameObject.transform;
 				is_chasing = true;
 			}*/
-			GetComponentInChildren<ChasingEffect> ().SendMessage ("PlayGhostSound");
 			target = collision_with.gameObject.transform;
 			is_chasing = true;
 		}

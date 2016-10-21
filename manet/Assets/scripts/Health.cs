@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour {
 
-	public float invicibleXseconds = 2;
+	public float playerInvincibleXseconds = 3f;
 	public int current_health = 3;
 	GameObject find_health_ui;
 	public Sprite no_heart;
@@ -13,6 +13,7 @@ public class Health : MonoBehaviour {
 	public Sprite two_hearts;
 	public Sprite three_hearts;
 	public AudioSource music_theme;
+	public bool invincible = false;
 
 
 	// Use this for initialization
@@ -53,11 +54,15 @@ public class Health : MonoBehaviour {
 
 	void ApplyDamage(int damage)
 	{
-		if (current_health > 0) 
+		if (!invincible) 
 		{
-			current_health -= damage;
+			if (current_health > 0) 
+			{
+				current_health -= damage;
+			}
+			showHealth (current_health);
+			StartCoroutine (stopTouching ());
 		}
-		showHealth (current_health);
 	}
 
 	void addLife(int life)
@@ -75,7 +80,6 @@ public class Health : MonoBehaviour {
 		if (current_health == 3) 
 		{
 			find_health_ui.GetComponent<Image> ().sprite = three_hearts;
-			music_theme.pitch = 1;
 		}
 		if (current_health == 2) 
 		{
@@ -84,13 +88,19 @@ public class Health : MonoBehaviour {
 		if (current_health == 1) 
 		{
 			find_health_ui.GetComponent<Image> ().sprite = one_heart;
-			music_theme.pitch = 3;
 		}
 		if (current_health == 0) 
 		{
 			find_health_ui.GetComponent<Image> ().sprite = no_heart;
 			SceneManager.LoadScene (0);
 		}
+	}
+
+	IEnumerator stopTouching()
+	{
+		invincible = true;
+		yield return new WaitForSeconds (playerInvincibleXseconds);
+		invincible = false;
 	}
 		
 }

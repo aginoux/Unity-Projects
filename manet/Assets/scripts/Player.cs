@@ -251,9 +251,6 @@ public class Player : MonoBehaviour {
     }
     */
 
-    
-    // START VERSION 1.0
-    private Rigidbody2D mrb2D;
     //Movement
     private float moveSpeed;
     public float walkSpeed;
@@ -294,7 +291,6 @@ public class Player : MonoBehaviour {
         down = false;
 		in_locker = false;
 		can_move = true;
-        mrb2D = GetComponent<Rigidbody2D>();
         //transform.position = new Vector3(0, 0, 0);
     }
 

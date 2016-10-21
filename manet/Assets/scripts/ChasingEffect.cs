@@ -3,8 +3,6 @@ using System.Collections;
 
 public class ChasingEffect : MonoBehaviour {
 
-	public AudioSource ghost_sound_effect;
-
 	// Use this for initialization
 	void Start () {
 		GetComponent<SpriteRenderer> ().enabled = false;
@@ -22,13 +20,5 @@ public class ChasingEffect : MonoBehaviour {
 			GetComponent<SpriteRenderer> ().enabled = false;
 		}
 	
-	}
-
-	public void PlayGhostSound()
-	{
-		if (!ghost_sound_effect.isPlaying) 
-		{		
-			ghost_sound_effect.Play ();
-		}
 	}
 }
