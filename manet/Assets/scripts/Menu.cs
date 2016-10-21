@@ -18,6 +18,5 @@ public class Menu : MonoBehaviour {
             Application.Quit();
         }
     }
-    // Use this for initialization
 
 }
