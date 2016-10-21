@@ -10,13 +10,14 @@ public class Menu : MonoBehaviour {
     {
         SceneManager.LoadScene(level);
     }
+    public void chose_level(string level)
+    {
+        if (level == "exit")
+        {
+            print("exit");
+            Application.Quit();
+        }
+    }
     // Use this for initialization
-    void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }
