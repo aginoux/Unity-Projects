@@ -13,6 +13,8 @@ public class Searching : MonoBehaviour {
 	public bool is_chasing = false;
 	public GameObject player;
 	public Vector3 last_target;
+	public GameObject dialogue;
+	public float display_x_sd;
 
 	// Use this for initialization
 	void Start () {
@@ -84,6 +86,7 @@ public class Searching : MonoBehaviour {
 				target = collision_with.gameObject.transform;
 				is_chasing = true;
 			}*/
+			display (display_x_sd);
 			target = collision_with.gameObject.transform;
 			is_chasing = true;
 		}
@@ -97,6 +100,13 @@ public class Searching : MonoBehaviour {
 			heard_noise = false;
 			is_chasing = false;
 		}
+	}
+
+	IEnumerator display(float display_x_sd)
+	{
+		dialogue.GetComponent<SpriteRenderer> ().enabled = true;
+		yield return WaitForSeconds (display_x_sd);
+		dialogue.GetComponent<SpriteRenderer> ().enabled = false;
 	}
 		
 }
