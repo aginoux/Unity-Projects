@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Searching : MonoBehaviour {
 
@@ -13,14 +14,15 @@ public class Searching : MonoBehaviour {
 	public bool is_chasing = false;
 	public GameObject player;
 	public Vector3 last_target;
-	public GameObject dialogue;
-	public float display_x_sd;
+	public GameObject dialogue_chase;
+	public float display_x_sd = 3f;
 
 	// Use this for initialization
 	void Start () {
 		last_target = transform.position;
         target = Waypoints.points[0];
         heard_noise = false;
+		dialogue_chase.GetComponent<Image> ().enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -86,7 +88,7 @@ public class Searching : MonoBehaviour {
 				target = collision_with.gameObject.transform;
 				is_chasing = true;
 			}*/
-			display (display_x_sd);
+			StartCoroutine(display (display_x_sd,dialogue_chase));
 			target = collision_with.gameObject.transform;
 			is_chasing = true;
 		}
@@ -102,11 +104,11 @@ public class Searching : MonoBehaviour {
 		}
 	}
 
-	IEnumerator display(float display_x_sd)
+	IEnumerator display(float display_x_sd, GameObject dialogue)
 	{
-		dialogue.GetComponent<SpriteRenderer> ().enabled = true;
-		yield return WaitForSeconds (display_x_sd);
-		dialogue.GetComponent<SpriteRenderer> ().enabled = false;
+		dialogue.GetComponent<Image> ().enabled = true;
+		yield return new WaitForSeconds (display_x_sd);
+		dialogue.GetComponent<Image> ().enabled = false;
 	}
 		
 }
