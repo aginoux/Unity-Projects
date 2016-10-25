@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: e8127fe34993a8f4ca65b2edf0a086cf
-timeCreated: 1476567829
+timeCreated: 1477397937
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -23,6 +23,15 @@ TextureImporter:
     21300032: Atlas_Manet_01_16
     21300034: Atlas_Manet_01_17
     21300036: Atlas_Manet_01_18
+    21300038: Atlas_Manet_01_22
+    21300040: Atlas_Manet_01_24
+    21300042: Atlas_Manet_01_25
+    21300044: Atlas_Manet_01_30
+    21300046: Atlas_Manet_01_35
+    21300048: Atlas_Manet_01_20
+    21300050: Atlas_Manet_01_21
+    21300052: Atlas_Manet_01_23
+    21300054: Atlas_Manet_01_26
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -283,12 +292,12 @@ TextureImporter:
       name: Atlas_Manet_01_16
       rect:
         serializedVersion: 2
-        x: 4
-        y: 642
+        x: 0
+        y: 641
         width: 108
-        height: 108
+        height: 110
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -297,9 +306,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 462
-        y: 700
+        y: 745
         width: 411
-        height: 61
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -309,12 +318,129 @@ TextureImporter:
       name: Atlas_Manet_01_18
       rect:
         serializedVersion: 2
-        x: 705
-        y: 693
-        width: 8
-        height: 7
+        x: 293
+        y: 670
+        width: 68
+        height: 67
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas_Manet_01_22
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 246
+        width: 79
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas_Manet_01_24
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 248
+        width: 93
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas_Manet_01_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 255
+        width: 77
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas_Manet_01_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 124
+        width: 77
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas_Manet_01_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 77
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas_Manet_01_20
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 661
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas_Manet_01_21
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 446
+        width: 156
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas_Manet_01_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 452
+        width: 89
+        height: 185
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas_Manet_01_26
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 657
+        width: 75
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
