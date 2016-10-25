@@ -106,7 +106,7 @@ public class Player : MonoBehaviour {
 		}
 
 		//check if close to a hideout.
-		if(Input.GetKeyDown(KeyCode.E) || action_player)
+		if(Input.GetKeyDown(KeyCode.E))
 		{
 			test = !test;
 			if (!in_locker) {
@@ -240,7 +240,26 @@ public class Player : MonoBehaviour {
 
 	public void OnActionButtonPressed()
 	{
-		StartCoroutine (wait ());
+		if (!in_locker) 
+		{
+			Collider2D[] detected_it = Physics2D.OverlapCircleAll (transform.position, radius_circle_detection);
+			int i = 0;
+			while (i < detected_it.Length) {
+				if (detected_it [i].tag == tag_locker) {
+					EnterLocker ();
+					in_locker = true;
+					can_move = false;
+					return;
+				}
+				i++;
+			}
+		}
+		else 
+		{
+			ExitLocker ();
+			can_move = true;
+			in_locker = false;
+		}
 	}
 
 	public void OnSprinttingButtonPressed()
@@ -259,12 +278,5 @@ public class Player : MonoBehaviour {
 	public void ReleaseSprinttingButton()
 	{
 		sprintting_player = false;
-	}
-
-	IEnumerator wait()
-	{
-		action_player = true;
-		yield return new WaitForSeconds (time_clik);
-		action_player = false;
 	}
 }
