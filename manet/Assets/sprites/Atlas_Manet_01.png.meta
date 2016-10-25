@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: e8127fe34993a8f4ca65b2edf0a086cf
-timeCreated: 1477399052
+timeCreated: 1477401694
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -463,10 +463,10 @@ TextureImporter:
       name: Atlas_Manet_01_27
       rect:
         serializedVersion: 2
-        x: 1127
-        y: 789
-        width: 271
-        height: 102
+        x: 1101
+        y: 777
+        width: 284
+        height: 104
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
